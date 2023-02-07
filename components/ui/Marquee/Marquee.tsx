@@ -15,7 +15,6 @@ const Marquee: FC<Props> = ({ children, variant = 'primary' }) => {
       ? 'bg-white h-96'
       : ''
 
-  console.log('rootStyle: ', rootStyle)
   return (
     <div className={rootStyle}>
       <Ticker offset={80}>
