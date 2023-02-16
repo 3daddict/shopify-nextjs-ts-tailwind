@@ -1,3 +1,4 @@
+
 export interface ProductImage {
   url: string
   alt?: string
@@ -5,7 +6,7 @@ export interface ProductImage {
 
 export interface ProductPrice {
   value: number
-  currencyCode: 'USD' | 'EUR' | string
+  currencyCode: "USD" | "EUR" | string
 }
 
 export interface Product {

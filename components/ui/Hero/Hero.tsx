@@ -1,27 +1,31 @@
-import { FC } from 'react'
-import Link from 'next/link'
-import { Container } from '@components/ui'
+
+import { FC } from "react"
+import s from "./Hero.module.css"
+import Link from "next/link"
+import { Container } from "@components/ui"
 
 interface Props {
   headline: string
   description: string
 }
 
-const Hero: FC<Props> = ({ headline, description }) => {
+
+const Hero: FC<Props> = ({headline, description}) => {
   return (
-    <div className="flex flex-col justify-center py-32 bg-black mg:flex-row">
+    <div className="bg-black">
       <Container>
-        <div className="">
-          <h2 className="max-w-xl text-4xl font-extrabold leading-10 text-white flec-1 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
+        <div className={s.root}>
+          <h2 className={s.headline}>
             {headline}
           </h2>
-          <div className="flex-1 max-w-4xl mt-5 text-xl leading-7 text-white">
-            <p>{description}</p>
-            <Link
-              className="block pt-3 font-bold text-white hover:underline"
-              href="/"
-            >
-              Read it here
+          <div className="flex-1 max-w-4xl">
+            <p className={s.description}>
+              {description}
+            </p>
+            <Link href="/">
+              <a className={s.link}>
+                Read it here
+              </a>
             </Link>
           </div>
         </div>
@@ -30,4 +34,4 @@ const Hero: FC<Props> = ({ headline, description }) => {
   )
 }
 
-export default Hero
+export default Hero;
