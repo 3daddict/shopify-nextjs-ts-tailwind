@@ -1,4 +1,5 @@
-const productConnention = `
+
+const productConnection = `
   pageInfo {
     hasNextPage
     hasPreviousPage
@@ -35,11 +36,11 @@ const productConnention = `
 `
 
 const getAllProductsQuery = `
-query getAllProducts($first: Int = 250) {
-  products(first: $first) {
-    ${productConnention}
+  query getAllProducts($first: Int = 250) {
+    products(first: $first) {
+      ${productConnection}
+    }
   }
-}
 `
 
-export default getAllProductsQuery;
+export default getAllProductsQuery

@@ -1,47 +1,32 @@
 import { FC } from 'react'
 import { Container } from '@components/ui'
 import Link from 'next/link'
+import s from './Navbar.module.css'
 import { Usernav } from '@components/common'
-
-const navLinks = [
-  {
-    name: 'All',
-    href: '/',
-  },
-  {
-    name: 'Clothing',
-    href: '/clothing',
-  },
-  {
-    name: 'Accessories',
-    href: '/accesories',
-  },
-  {
-    name: 'Shoes',
-    href: '/shoes',
-  },
-]
 
 const Navbar: FC = () => {
   return (
     <Container>
-      <div className="flex flex-row md:py-6">
+      <div className={s.root}>
         <div className="flex items-center flex-1">
-          <Link className="text-2xl font-bold" href="/">
-            GTFOL
+          <Link href="/">
+            <a className={s.logo}>GTFOL</a>
           </Link>
           <nav className="ml-6 space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                className="font-medium leading-6 text-gray-500 transition hover:text-gray-900 text-accents-6 hover:text-accents-9"
-                href={link.href}
-              >
-                {link.name}
-              </Link>
-            ))}
+            <Link href="/">
+              <a className={s.link}>All</a>
+            </Link>
+            <Link href="/">
+              <a className={s.link}>Clothes</a>
+            </Link>
+            <Link href="/">
+              <a className={s.link}>Accesories</a>
+            </Link>
+            <Link href="/">
+              <a className={s.link}>Shoes</a>
+            </Link>
           </nav>
-          <div className="flex justify-end flex-1 spaxe-x-8">
+          <div className="flex justify-end flex-1 space-x-8">
             <Usernav />
           </div>
         </div>
