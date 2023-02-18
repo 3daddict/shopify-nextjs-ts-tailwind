@@ -1,7 +1,7 @@
 import '@assets/main.css'
 import { AppProps } from 'next/app'
 import { FC } from 'react'
-import { UIProvider, useUI } from '@components/ui/context'
+import { UIProvider } from '@components/ui/context'
 
 const Noop: FC = ({ children }) => <>{children}</>
 
@@ -10,7 +10,6 @@ function MyApp({
   pageProps,
 }: AppProps & { Component: { Layout: FC } }) {
   const Layout = Component.Layout ?? Noop
-  const ui = useUI()
 
   return (
     <UIProvider>
